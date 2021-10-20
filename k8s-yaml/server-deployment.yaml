@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: udp-server
+  labels:
+    app: udp-server
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: udp-server
+  template:
+    metadata:
+      labels:
+        app: udp-server
+    spec:
+      containers:
+      - name: udp-server
+        image: "rishasi/udp-server:v1"
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 20001
