@@ -7,9 +7,9 @@ metadata:
 spec:
   type: LoadBalancer
   ports:
-  - name: udp-server
-    port: 20001
-    protocol: UDP
+    - name: udp-server
+      port: 20001
+      protocol: UDP
   selector:
     app: udp-server
   sessionAffinity: ClientIP
